@@ -1,0 +1,17 @@
+RewriteEngine On
+RewriteBase /
+
+
+RewriteRule ^tech(/|$) - [F,L]
+RewriteRule ^model(/|$) - [F,L]
+RewriteRule ^includes(/|$) - [F,L]
+RewriteRule ^controller(/|$) - [F,L]
+RewriteRule ^view(/|$) - [F,L]
+
+
+
+RewriteCond %{REQUEST_URI} !^/css/
+RewriteCond %{REQUEST_URI} !^/js/
+RewriteCond %{REQUEST_URI} !^/upload/
+
+RewriteRule ^ index.php [QSA,L]

@@ -1,0 +1,371 @@
+
+
+@media (min-width: 851px){
+ 
+.movies_container {
+    grid-template-rows: none;
+    margin: 0;
+    overflow-y: scroll;
+    align-self: unset;
+    padding: 0;
+    row-gap: unset;
+    height: calc(100vh - 100px);
+    width: 100%;
+}
+.movie-content{
+    margin-top: 100px;
+}
+.flex-container {
+    display: flex; /* использование flexbox */
+}
+
+.item-image {
+    box-shadow: 0 2px 10px rgba(245, 245, 245, 0.1) ;
+    border-radius: 20px;
+    margin: 10px;
+    padding: 5px;
+    flex: 0 0 30%; /* это означает: не расти, не сжимайся, начальная ширина - 30% */
+    overflow: hidden; /* обрезать изображение, если оно выходит за границы блока */
+}
+
+.item-image img {
+    border-radius: 20px;
+    height: auto; /* занимает всю высоту .item-image */
+    width: 100%; /* занимает всю ширину .item-image */
+    object-fit: cover; 
+    object-position: center;
+}
+
+.movie-details-container {
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 0 2px 10px rgba(245, 245, 245, 0.5) ;
+    margin: 10px 10px 10px 0;
+    flex: 1; /* позволяет элементу расти и занимать оставшееся пространство */
+}
+
+
+
+/* Метаданные фильма (рейтинг, жанры) */
+.movie-metadata {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.movie-rating, .movie-genres {
+    font-weight: 600;
+}
+
+/* Описание */
+.description-content h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+}
+
+.movie-description {
+    margin-bottom: 2rem;
+}
+
+/* Форма комментария */
+.comment-form {
+    margin: 2rem auto;
+}
+
+.comment-form textarea {
+    
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    resize: vertical;
+}
+
+.comment-form input[type="submit"],#editMovieModalOpenBtn {
+    font-size: 20px;
+    background-color: black;
+    color: #8f95a3;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.comment-form input[type="submit"]:hover,#editMovieModalOpenBtn:hover {
+    color: whitesmoke;
+}
+
+.comments-container {
+    margin: 2rem auto;
+}
+
+h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+    font-weight: 600;
+}
+
+.flex-container{
+    display: flex;
+    
+}
+.flex-comments{
+    margin-left: 20px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.flex-comments p {
+    max-width: 50%;
+    align-self: center;
+}
+
+.name-time {
+    display: grid;
+    justify-content: flex-end;
+    align-content: space-between;
+    margin-bottom: 10px;
+}
+
+.image-container{
+    display: flex;
+    box-shadow: 0 2px 10px rgba(245, 245, 245, 0.1);
+    border-radius: 5px;
+    flex: 0 0 30%;
+    overflow: hidden;
+}
+
+.grid-info img {
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+    object-fit: cover;
+    object-position: center;
+}
+h5 {
+    font-size: 14px;
+    font-weight: 400;
+    color: #888;
+}
+
+.comments-section {
+    width: 100%;
+    background-color: #f6f6f6;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.comment {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 15px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+#commentButton {
+    margin-top: 10px;
+    background-color: transparent;
+    color: #8f95a3;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+.flex-comcontainer{
+    display: flex;
+    
+}
+
+
+
+/* Стили для модального окна */
+.modal {
+    display: none; /* Скрыто по умолчанию */
+    position: fixed; /* Фиксированное позиционирование */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4); /* Черный фон с прозрачностью */
+    z-index: 1; /* Позиционирование поверх остального контента */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% от верха и центрировано */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30%; /* По умолчанию ширина модального окна составляет 30% */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+}
+
+
+
+
+@media(max-width:850px){
+    .movies_container {
+        height: calc(100vh - 100px); /* Adjust height for mobile scrolling */
+        overflow-y: auto; /* Enable scrolling on small screens */
+        /* width: 100%; */
+    }
+    .content-buttons{
+        display: none;
+    }
+
+    .flex-container{
+        display: grid;
+        
+    }
+
+
+    .item-image {
+
+        box-shadow: 0 2px 10px rgba(245, 245, 245, 0.1) ;
+        border-radius: 20px;
+        margin: 10px;
+        padding: 5px;
+        flex: 0 0 30%; /* это означает: не расти, не сжимайся, начальная ширина - 30% */
+        overflow: hidden; /* обрезать изображение, если оно выходит за границы блока */
+    }
+
+
+    .item-image img {
+        border-radius: 20px;
+        height: auto; /* занимает всю высоту .item-image */
+        width: 100%; /* занимает всю ширину .item-image */
+        object-fit: cover; 
+        object-position: center;
+    }
+
+    .movie-details-container {
+        margin: 5px; /* Smaller margin for mobile */
+        padding: 5px; /* Smaller padding for mobile */
+    }
+
+    .modal-content {
+        width: 90%; /* Modal takes more width on smaller screens */
+        margin: 10% auto; /* Adjust the margin to ensure it's centered */
+    }
+
+
+
+
+    .comment-form {
+        margin: 2rem auto;
+    }
+    
+    .comment-form textarea {
+        
+        width: 100%;
+        padding: 0.5rem;
+        margin-bottom: 1rem;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        resize: vertical;
+    }
+    
+    .comment-form input[type="submit"],#editMovieModalOpenBtn {
+        font-size: 20px;
+        background-color: black;
+        color: #8f95a3;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: color 0.3s;
+    }
+    
+    .comment-form input[type="submit"]:hover,#editMovieModalOpenBtn:hover {
+        color: whitesmoke;
+    }
+
+    
+
+    .flex-comcontainer{
+        display: flex;
+        
+    }
+
+    .flex-comments {
+        margin-left: 20px;
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+    }
+    .flex-comments p {
+        max-width: 50%;
+        align-self: center;
+    }
+    
+    .name-time {
+        display: grid;
+        justify-content: flex-end;
+        align-content: space-between;
+        margin-bottom: 10px;
+    }
+    
+    .image-container{
+        display: flex;
+        box-shadow: 0 2px 10px rgba(245, 245, 245, 0.1);
+        border-radius: 5px;
+        flex: 0 0 30%;
+        overflow: hidden;
+    }
+    
+    .grid-info img {
+        width: 100px;
+        height: 100px;
+        border-radius: 5px;
+        object-fit: cover;
+        object-position: center;
+    }
+    .comment {
+        background-color: #fff;
+        border-radius: 5px;
+        padding: 15px;
+        margin: 15px 0;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    }
+    #commentButton {
+        margin-top: 10px;
+        background-color: transparent;
+        color: #8f95a3;
+        border: none;
+        border-radius: 5px;
+        padding: 5px 10px;
+        cursor: pointer;
+        transition: color 0.3s;
+    }
+
+    h3 {
+        font-size: 24px;
+        margin-bottom: 20px;
+        color: #333;
+        font-weight: 600;
+    }
+    h5 {
+        font-size: 14px;
+        font-weight: 400;
+        color: #888;
+    }
+    
+}
