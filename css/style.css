@@ -310,6 +310,7 @@
 		height: calc(100vh - 100px);
 		display: flex;
 		justify-content: center;
+		align-self: center;
 		margin: 10px 10px 10px 10px;
 		width: 200px;
 		background-color: black;
