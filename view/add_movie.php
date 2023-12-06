@@ -36,6 +36,26 @@
         <input type="submit" name="submit" value="Add Movie" id="addMovie">
     </div>
     <link rel="stylesheet" href="../css/add.css">
+    <style>
+        @media (max-width: 850px){
+            .movies_container{
+            display: flex;
+            }
+            .content-buttons{
+                display: none;
+            }
+
+        }
+        @media (min-width: 851px){
+            .movies_container{
+            display: flex;
+            }
+            .filtering{
+                display: none;
+            }
+        }
+
+    </style>
 
 
 </form>

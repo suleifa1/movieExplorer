@@ -56,6 +56,21 @@
         </div>
     </div>
     <?php endif;?>
+    <style> 
+        #submitReport {
+          background-color: black;
+          color:#888;
+          padding: 10px 20px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          margin-top: 20px;
+      }
+
+      #submitReport:hover {
+          color:whitesmoke
+      }
+    </style>
 
 
 
